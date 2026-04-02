@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CONFIGURAÇÕES DE COMPARTILHAMENTO (WHATSAPP PREVIEW) -->
-    <!-- Para que a imagem apareça no WhatsApp, coloque o arquivo logo.jpg na mesma pasta do GitHub Pages -->
-    <meta property="og:title" content="Antecipe seu Check-in | Talismã Pallace Hotel">
-    <meta property="og:description" content="Agilize sua chegada! Faça seu pré check-in online de forma rápida, segura e sem filas.">
-    <meta property="og:image" content="logo.jpg"> 
+    <!-- CONFIGURAÇÕES DE PRÉVIA DO WHATSAPP (OPEN GRAPH) -->
+    <!-- Para uma prévia bonita, o WhatsApp usa estas tags: -->
+    <meta property="og:title" content="🏨 Antecipe seu Check-in | Talismã Pallace Hotel">
+    <meta property="og:description" content="Evite filas! Clique para realizar seu pré check-in online de forma rápida e segura.">
+    <meta property="og:image" content="logo.jpeg"> 
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#0071e3">
 
     <!-- 
         REDIRECIONAMENTO AUTOMÁTICO 
         O valor '3' abaixo é o tempo em segundos. 
-        Altere o número antes do ';' para ajustar o tempo de espera.
+        Altere o número antes do ';' para ajustar o tempo de espera (ex: 5;url=...).
     -->
     <meta http-equiv="refresh" content="5;url=https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddXW%2bUQw%3d%3d&From=MH">
 
     <title>Check-in Online | Talismã Pallace Hotel</title>
 
-    <!-- Estilo Minimalista Inspirado na Apple -->
     <style>
         :root {
             --apple-blue: #0071e3;
@@ -46,43 +46,41 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow: hidden;
         }
 
         .container {
             max-width: 400px;
             width: 100%;
             text-align: center;
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
         .logo-wrapper {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        /* Caso não tenha a imagem, um placeholder elegante */
+        .logo-img {
+            width: 100px;
+            height: auto;
+            border-radius: 22px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
         .logo-placeholder {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: white;
-            border-radius: 20px;
+            border-radius: 22px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            font-size: 40px;
-        }
-
-        .logo-img {
-            width: 80px;
-            height: auto;
-            border-radius: 18px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            font-size: 50px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
@@ -90,26 +88,25 @@
 
         p {
             font-size: 17px;
-            line-height: 1.47;
+            line-height: 1.4;
             color: var(--apple-secondary);
             margin-bottom: 30px;
-            font-weight: 400;
         }
 
         .status-box {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
+            padding: 25px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.4);
             margin-bottom: 30px;
         }
 
         .loader {
-            width: 24px;
-            height: 24px;
-            border: 3px solid #d2d2d7;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #e2e2e7;
             border-top: 3px solid var(--apple-blue);
             border-radius: 50%;
             display: inline-block;
@@ -122,26 +119,25 @@
             background-color: var(--apple-blue);
             color: white;
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 14px 32px;
             border-radius: 980px;
             font-size: 17px;
-            font-weight: 400;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
-        .btn:hover {
-            background-color: #0077ed;
-            transform: scale(1.02);
+        .btn:active {
+            transform: scale(0.96);
         }
 
         .footer {
-            margin-top: 50px;
-            font-size: 12px;
+            margin-top: 40px;
+            font-size: 13px;
             color: var(--apple-secondary);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -150,9 +146,8 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Responsividade para telas muito pequenas */
-        @media (max-width: 320px) {
-            h1 { font-size: 24px; }
+        @media (max-width: 350px) {
+            h1 { font-size: 22px; }
             p { font-size: 15px; }
         }
     </style>
@@ -161,17 +156,17 @@
 
     <div class="container">
         <div class="logo-wrapper">
-            <!-- Tenta carregar a logo, se falhar mostra o emoji -->
-            <img src="logo.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex'">
+            <!-- Usa logo.jpeg conforme solicitado -->
+            <img src="logo.jpeg" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex'">
             <div id="placeholder" class="logo-placeholder" style="display:none;">🏨</div>
         </div>
 
         <h1>Prepare sua chegada.</h1>
-        <p>Estamos preparando tudo para você no <strong>Talismã Pallace Hotel</strong>. Você será redirecionado para o portal do governo em instantes.</p>
+        <p>Estamos preparando tudo para você no <strong>Talismã Pallace Hotel</strong>.</p>
 
         <div class="status-box">
             <div class="loader"></div>
-            <div style="font-size: 14px; color: var(--apple-secondary);">Redirecionando com segurança...</div>
+            <div style="font-size: 15px; font-weight: 400; color: var(--apple-text);">Redirecionando para o portal GOV...</div>
         </div>
 
         <a href="https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddXW%2bUQw%3d%3d&From=MH" class="btn">
