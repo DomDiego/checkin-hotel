@@ -1,63 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CONFIGURAÇÕES DE COMPARTILHAMENTO (WHATSAPP PREVIEW) -->
+    <!-- Para que a imagem apareça no WhatsApp, coloque o arquivo logo.jpg na mesma pasta do GitHub Pages -->
+    <meta property="og:title" content="Antecipe seu Check-in | Talismã Pallace Hotel">
+    <meta property="og:description" content="Agilize sua chegada! Faça seu pré check-in online de forma rápida, segura e sem filas.">
+    <meta property="og:image" content="logo.jpg"> 
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
 
-  <!-- Open Graph (WhatsApp preview) -->
-  <meta property="og:title" content="Antecipe seu Check-in 🏨">
-  <meta property="og:description" content="Evite filas! Faça seu pré check-in no Talisma Pallace Hotel de forma rápida e segura.">
-  <meta property="og:image" content="https://SEU-USUARIO.github.io/checkin-hotel/logo.png">
-  <meta property="og:url" content="https://SEU-USUARIO.github.io/checkin-hotel/">
-  <meta property="og:type" content="website">
+    <!-- 
+        REDIRECIONAMENTO AUTOMÁTICO 
+        O valor '3' abaixo é o tempo em segundos. 
+        Altere o número antes do ';' para ajustar o tempo de espera.
+    -->
+    <meta http-equiv="refresh" content="3;url=https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddXW%2bUQw%3d%3d&From=MH">
 
-  <!-- Redirecionamento automático -->
-  <meta http-equiv="refresh" content="2;url=https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddXW%2bUQw%3d%3d&From=MH">
+    <title>Check-in Online | Talismã Pallace Hotel</title>
 
-  <title>Check-in Online</title>
+    <!-- Estilo Minimalista Inspirado na Apple -->
+    <style>
+        :root {
+            --apple-blue: #0071e3;
+            --apple-bg: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-secondary: #86868b;
+        }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background: #f5f5f5;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #0a7cff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 40px;
+        }
+
+        /* Caso não tenha a imagem, um placeholder elegante */
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            font-size: 40px;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.47;
+            color: var(--apple-secondary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .status-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 30px;
+        }
+
+        .loader {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #d2d2d7;
+            border-top: 3px solid var(--apple-blue);
+            border-radius: 50%;
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--apple-blue);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 980px;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0077ed;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: var(--apple-secondary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 320px) {
+            h1 { font-size: 24px; }
+            p { font-size: 15px; }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="card">
-    <img src="logo.jpeg" alt="Hotel Logo">
-    
-    <h2>🏨 Antecipe seu Check-in</h2>
-    
-    <p>
-      Bem-vindo ao <strong>Talisma Pallace Hotel e Serviços</strong>.<br><br>
-      Evite filas e agilize sua entrada fazendo o pré check-in online.
-    </p>
 
-    <a href="https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddX%2bUQw%3d%3d&From=MH">
-      Fazer Check-in Agora
-    </a>
-  </div>
+    <div class="container">
+        <div class="logo-wrapper">
+            <!-- Tenta carregar a logo, se falhar mostra o emoji -->
+            <img src="logo.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex'">
+            <div id="placeholder" class="logo-placeholder" style="display:none;">🏨</div>
+        </div>
+
+        <h1>Prepare sua chegada.</h1>
+        <p>Estamos preparando tudo para você no <strong>Talismã Pallace Hotel</strong>. Você será redirecionado para o portal do governo em instantes.</p>
+
+        <div class="status-box">
+            <div class="loader"></div>
+            <div style="font-size: 14px; color: var(--apple-secondary);">Redirecionando com segurança...</div>
+        </div>
+
+        <a href="https://fnrh.turismo.serpro.gov.br/FNRH_Hospede/QRCodeFNRH?Source=l5CuhKYYOVc%2bd%2bf8gxL83QV8WR7QsPdIvpemi2BgKOra%2fDQmmaesHRTPyNnYtfoTsykVJEQuQC6pOP2bThQYpP5jKZTtlfoNBqTSANOZmaDJZZqIC8aOLZrsr7sBkPdQfuCZ2wCGPG7MdTddXW%2bUQw%3d%3d&From=MH" class="btn">
+            Ir agora
+        </a>
+
+        <div class="footer">
+            &copy; 2026 Talismã Pallace Hotel e Serviços
+        </div>
+    </div>
+
 </body>
 </html>
